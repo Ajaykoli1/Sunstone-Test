@@ -1,6 +1,6 @@
 package Sunstone_Training;
 
-abstract class Flight {    
+abstract class Flight {   
     int flightNumber;
     String origin;
     String destination;
@@ -25,7 +25,7 @@ abstract class Flight {
 }
 
 class DomesticFlight extends Flight {
-    final double DOMESTIC_TAX = 0.10;
+    final double DOMESTIC_TAX = 0.10; //10% Tax
 
     public DomesticFlight(int flightNumber, String origin, String destination, double baseFare) {
         super(flightNumber, origin, destination, baseFare);
@@ -38,7 +38,7 @@ class DomesticFlight extends Flight {
 }
 
 class InternationalFlight extends Flight {
-    final double INTERNATIONAL_TAX = 0.20;
+    final double INTERNATIONAL_TAX = 0.20; //20% Tax
     double immigrationFee;
 
     public InternationalFlight(int flightNumber, String origin, String destination, double baseFare, double immigrationFee) {
@@ -62,7 +62,7 @@ public class FlightManager {
     public static void main(String[] args) {
         Flight[] flights = new Flight[2];
         flights[0] = new DomesticFlight(101, "Delhi", "Mumbai", 5000);
-        flights[1] = new InternationalFlight(201, "Delhi", "London", 20000, 3000);
+        flights[1] = new InternationalFlight(201, "Delhi", "London", 20000, 3000); // Immigration Fee is taken 3000
 
         for (Flight f : flights) {
             f.displayDetails();
